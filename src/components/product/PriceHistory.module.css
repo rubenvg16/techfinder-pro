@@ -1,0 +1,104 @@
+.container {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.periodTabs {
+  display: flex;
+  gap: 4px;
+  background: var(--color-bg-input);
+  padding: 4px;
+  border-radius: var(--radius-md);
+}
+
+.periodTab {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-dim);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.periodTab:hover {
+  color: var(--color-text);
+}
+
+.periodTab.active {
+  background: var(--color-mint);
+  color: var(--color-bg);
+}
+
+.chart {
+  width: 100%;
+  height: 250px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: 4px;
+}
+
+.statValue.min {
+  color: #4285F4;
+}
+
+.statValue.max {
+  color: #E53238;
+}
+
+.statValue.avg {
+  color: var(--color-mint);
+}
+
+.empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--color-text-dim);
+}
+
+.emptyIcon {
+  margin-bottom: 12px;
+  color: var(--color-text-muted);
+}

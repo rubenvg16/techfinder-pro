@@ -1,0 +1,271 @@
+.form {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.searchWrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 20px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+  z-index: 2;
+  transition: color var(--transition-fast);
+}
+
+.searchWrapper:focus-within .searchIcon {
+  color: var(--color-mint);
+}
+
+.input {
+  width: 100%;
+  padding: 20px 24px 20px 56px;
+  font-size: 17px;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(10px);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input:hover {
+  border-color: var(--color-border-hover);
+  background: rgba(26, 26, 26, 0.9);
+}
+
+.input:focus {
+  border-color: var(--color-mint);
+  background: rgba(20, 20, 20, 0.95);
+  box-shadow: 
+    0 0 0 1px var(--color-mint),
+    0 8px 32px rgba(0, 212, 170, 0.15),
+    0 0 60px rgba(0, 212, 170, 0.05);
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.clearButton {
+  position: absolute;
+  right: 16px;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clearButton:hover {
+  color: var(--color-text);
+  background: var(--color-bg-elevated);
+}
+
+.submitButton {
+  padding: 20px 36px;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--color-mint);
+  color: #0A0A0A;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.submitButton:hover:not(:disabled) {
+  background: var(--color-mint-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 212, 170, 0.3);
+}
+
+.submitButton:hover:not(:disabled)::before {
+  opacity: 1;
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submitButton .spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  position: absolute;
+}
+
+.submitButton .buttonText {
+  visibility: hidden;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.formWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--color-bg-elevated, #1a1a1a);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.dropdownHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.clearHistoryButton {
+  background: none;
+  border: none;
+  color: var(--color-mint);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background var(--transition-fast);
+}
+
+.clearHistoryButton:hover {
+  background: rgba(0, 212, 170, 0.1);
+}
+
+.dropdownList {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.historyButton {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 15px;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+
+.historyButton:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.historyButton svg {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.removeHistoryButton {
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: all var(--transition-fast);
+}
+
+.dropdownItem:hover .removeHistoryButton {
+  opacity: 1;
+}
+
+.removeHistoryButton:hover {
+  color: var(--color-error, #ff6b6b);
+}
+
+@media (max-width: 640px) {
+  .form {
+    flex-direction: column;
+  }
+
+  .submitButton {
+    width: 100%;
+    padding: 16px 24px;
+  }
+
+  .input {
+    padding: 16px 20px 16px 48px;
+    font-size: 16px;
+  }
+
+  .searchIcon {
+    left: 16px;
+  }
+}

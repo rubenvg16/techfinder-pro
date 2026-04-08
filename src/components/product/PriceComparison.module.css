@@ -1,0 +1,139 @@
+.container {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+
+.priceList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.priceItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.priceItem.best {
+  border-color: var(--color-mint);
+  background: rgba(0, 212, 170, 0.05);
+}
+
+.sourceInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sourceIcon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.sourceIcon.ebay {
+  background: rgba(229, 50, 56, 0.15);
+  color: #E53238;
+}
+
+.sourceIcon.aliexpress {
+  background: rgba(255, 153, 0, 0.15);
+  color: #FF9900;
+}
+
+.sourceIcon.google {
+  background: rgba(66, 133, 244, 0.15);
+  color: #4285F4;
+}
+
+.sourceName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.priceValue {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.priceAmount {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.bestBadge {
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--color-mint);
+  color: var(--color-bg);
+  border-radius: var(--radius-sm);
+}
+
+.viewButton {
+  margin-left: 16px;
+  white-space: nowrap;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.summaryItem {
+  text-align: center;
+}
+
+.summaryLabel {
+  font-size: 12px;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summaryValue {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: 4px;
+}
+
+.savings {
+  color: var(--color-mint);
+}
+
+.empty {
+  text-align: center;
+  padding: 32px;
+  color: var(--color-text-dim);
+}
