@@ -42,7 +42,11 @@ function SearchPageContent() {
   }, [initialQuery]);
 
   const productCounts = useMemo(() => {
-    const counts: Record<ProductSource, number> = { ebay: 0, google: 0 };
+    // Inicializa dinámicamente todos los sources posibles a 0
+    const initialSources: ProductSource[] = ['ebay', 'google', 'fakestore', 'dummyjson'];
+    const counts: Record<ProductSource, number> = Object.fromEntries(
+      initialSources.map(src => [src, 0])
+    ) as Record<ProductSource, number>;
     results.forEach((p) => {
       counts[p.source]++;
     });
