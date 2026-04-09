@@ -5,6 +5,8 @@ import { generateId } from './idGenerator';
 const MOCK_TITLES: Record<SourceId, string[]> = {
   ebay: ['eBay Best Seller', 'eBay Premium', 'eBay Deal', 'eBay Featured', 'eBay Trending'],
   google: ['Google Shopping Best Match', 'Google Shopping Deal', 'Google Shopping Popular', 'Google Shopping Featured'],
+  fakestore: ['FakeStore Premium', 'FakeStore Deal', 'FakeStore Featured', 'FakeStore Best Seller'],
+  dummyjson: ['DummyJSON Product', 'DummyJSON Deal', 'DummyJSON Featured', 'DummyJSON Popular'],
 };
 
 function getMockTitle(source: SourceId, index: number): string {
